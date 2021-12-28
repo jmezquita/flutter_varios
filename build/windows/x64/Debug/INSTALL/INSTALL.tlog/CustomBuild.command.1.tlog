@@ -1,0 +1,10 @@
+^C:\USERS\JMGYS.DESKTOP-HMIIL8C\ONEDRIVE\DESKTOP\FLUTTER\PLATZI_TRIPS_APP\BUILD\WINDOWS\CMAKEFILES\2B87E92ABE225218B71297393E73CFDA\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

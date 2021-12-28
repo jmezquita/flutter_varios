@@ -1,0 +1,10 @@
+^C:\USERS\JMGYS.DESKTOP-HMIIL8C\ONEDRIVE\DESKTOP\FLUTTER\PLATZI_TRIPS_APP\BUILD\WINDOWS\CMAKEFILES\2B87E92ABE225218B71297393E73CFDA\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/jmgys.DESKTOP-HMIIL8C/OneDrive/Desktop/Flutter/platzi_trips_app/windows -BC:/Users/jmgys.DESKTOP-HMIIL8C/OneDrive/Desktop/Flutter/platzi_trips_app/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/jmgys.DESKTOP-HMIIL8C/OneDrive/Desktop/Flutter/platzi_trips_app/build/windows/platzi_trips_app.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
