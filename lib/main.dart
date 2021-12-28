@@ -8,6 +8,8 @@ import 'description_place.dart';
 import 'header_appbar.dart';
 
 void main() {
+ // this a the test
+
   //Esto es para quitar la falta en el color de la barra de notificaciones
   //principalmmente en adroid
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
