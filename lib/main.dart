@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_varios/country_model.dart';
 import 'package:flutter_varios/data.dart';
+import 'home_app.dart';
 
-import 'package:flutter_varios/review_list.dart';
-import 'description_place.dart';
-import 'header_appbar.dart';
 
 void main() {
  // this a the test
@@ -23,25 +20,16 @@ class MyApp extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+
+      static Data data = Data();
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    Data _data = Data();
-    _data.load();
 
-    CountryModel countryModel = _data.countryList.where((p) => p.id == 1).first;
+    data.load();
 
-    final body = Stack(
-      children: <Widget>[
-        ListView(
-          children: <Widget>[
-            DescriptionPlace(countryModel),
-            ReviewList(countryModel.reviews)
-          ],
-        ),
-        const HeaderAppBar()
-      ],
-    );
+   // final body =
 
     return MaterialApp(
         title: 'Flutter Demo',
@@ -57,31 +45,9 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: Scaffold(
-            /*
-        appBar: AppBar(
-          title: const Text("Hello happy world "),
-        ) ,
-        */
-            body: body
-
-            /*
-        Column( 
-          children: const <Widget> [
-                DescriptionPlace(
-                        namePlace: "Rep Dom", 
-                        stars:  2.3,
-                        descriptionPlace:  '''Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s 
-                        
-                        ahora no se nada , este textop es un problema ordenarlo, creo que esta mejorando, ya lo he justificado , ahota toca esperar por que aveces se sale de los margenes 
-                        '''
-                        ),
-                        ReviewList()
-
-          ],
-        ) 
-        */
-            ) //const MyHomePage(title: 'Flutter Demo Ho2me2222 Page'),
+        home:const HomeApp()
+        //HomeAppCupertino()
+        // const HomeApp() //const MyHomePage(title: 'Flutter Demo Ho2me2222 Page'),
         );
   }
 }

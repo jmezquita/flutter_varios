@@ -18,7 +18,7 @@ class ReviewView extends StatelessWidget {
       decoration: BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(
-              fit: BoxFit.cover, image: AssetImage(reviewModel.pathImage))),
+              fit: BoxFit.cover, image: AssetImage(reviewModel.profile.pathImage))),
     );
 //comments
     final _userCommnents = Container(
@@ -50,7 +50,7 @@ class ReviewView extends StatelessWidget {
     final _userName = Container(
       margin: const EdgeInsets.only(left: 2.0),
       child: Text(
-        reviewModel.userName,
+        reviewModel.profile.userName,
         textAlign: TextAlign.left,
         style: const TextStyle(fontFamily: "Lato", fontSize: 17.0),
       ),

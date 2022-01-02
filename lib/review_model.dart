@@ -1,19 +1,18 @@
+import 'profile_model.dart';
+
 class ReviewModel {
-  
-   int paisId ;
-   String pathImage;
-   String userName;
-   String userInfo;
-   String comments;
-   double starCant;
+  int paisId;
+  ProfileModel profile;
+  String userInfo;
+  String comments;
+  double starCant;
+
+
 
   ReviewModel(
-      {
-      this.paisId =0,
-      this.pathImage="",
-      this.userName ="",
-      this.userInfo="",
-      this.comments="",
-      this.starCant=0.0}
-      );
+     this.profile ,
+      {this.paisId = 0,
+      this.userInfo = "",
+      this.comments = "",
+      this.starCant = 0.0});
 }

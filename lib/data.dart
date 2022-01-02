@@ -1,14 +1,31 @@
+
+
 import 'package:flutter_varios/country_model.dart';
+import 'package:flutter_varios/idata.dart';
 import 'package:flutter_varios/review_model.dart';
 
-class Data {
+import 'profile_model.dart';
+
+
+class Data implements IData {
+
   List<CountryModel> _countryList = [];
   List<ReviewModel> _reviewList = [];
 
+  List<ProfileModel> _profilelist = [];
+
+ @override
   List<CountryModel> get countryList => _countryList;
+
+  @override
   List<ReviewModel> get reviewList => _reviewList;
 
+  @override
+  List<ProfileModel> get profilelist => _profilelist;
+
+ @override
   void load() {
+    _profilelist = getProfiles();
     _reviewList = getReviews();
     _countryList = getCountries();
   }
@@ -35,22 +52,71 @@ class Data {
     return _list;
   }
 
-  List<ReviewModel> getReviews() {
-    List<ReviewModel> _list = [];
+  List<ProfileModel> getProfiles() {
+    List<ProfileModel> _list = [];
 
-    _list.add(ReviewModel(
-        paisId: 1,
+    _list.add(ProfileModel(
+        id: 1,
         pathImage: 'assets/images/ani1.jpg',
         userName: "Juan Carlos",
-        userInfo: "1 review. 5 photo",
-        comments: "the is an amazing place in Dom Rep",
-        starCant: 3.5));
+        email: "jmgysoft@hotmail.com"));
+
+    _list.add(ProfileModel(
+        id: 2,
+        pathImage: 'assets/images/ani2.jpg',
+        userName: "Joseph",
+        email: "jmgysoft@hotmail.com"));
+
+    _list.add(ProfileModel(
+        id: 3,
+        pathImage: 'assets/images/ani3.jpg',
+        userName: "yosi",
+        email: "jmgysoft@hotmail.com"));
+
+      _list.add(ProfileModel(
+        id: 4,
+        pathImage: 'assets/images/ani4.jpg',
+        userName: "ana",
+        email: "jmgysoft@hotmail.com"));
+
+         _list.add(ProfileModel(
+        id: 5,
+        pathImage: 'assets/images/ani5.jpg',
+        userName: "miguel",
+        email: "jmgysoft@hotmail.com"));
+
+      _list.add(ProfileModel(
+        id: 6,
+        pathImage: 'assets/images/ani6.jpg',
+        userName: "starling",
+        email: "jmgysoft@hotmail.com"));
+
+        
+      _list.add(ProfileModel(
+        id: 7,
+        pathImage: 'assets/images/ani7.jpg',
+        userName: "anilda",
+        email: "jmgysoft@hotmail.com"));
+
+    return _list;
+  }
+
+  List<ReviewModel> getReviews() {
+    List<ReviewModel> _list = [];
+     
+    _list.add(
+        ReviewModel(
+          profilelist.where((w) => w.id==1).first,
+            paisId: 1,
+            userInfo: "1 review. 5 photo",
+            comments: "the is an amazing place in Dom Rep",
+            starCant: 3.5)
+          );
 
     _list.add(
       ReviewModel(
+        profilelist.where((w) => w.id==2).first,
           paisId: 1,
-          pathImage: 'assets/images/ani2.jpg',
-          userName: "Joseph",
           userInfo: "1 review. 2 photo",
           comments: "the is an amazing place in Dom Repu",
           starCant: 5),
@@ -58,9 +124,8 @@ class Data {
 
     _list.add(
       ReviewModel(
+        profilelist.where((w) => w.id==3).first,
           paisId: 1,
-          pathImage: 'assets/images/ani3.jpg',
-          userName: "yosi",
           userInfo: "1 review. 3 photo",
           comments: "the is an amazing place in Dom Repu",
           starCant: 2.5),
@@ -68,9 +133,8 @@ class Data {
 
     _list.add(
       ReviewModel(
+         profilelist.where((w) => w.id==4).first,
           paisId: 1,
-          pathImage: 'assets/images/ani4.jpg',
-          userName: "ana",
           userInfo: "1 review. 1 photo",
           comments: "the is an amazing place in Dom Repu",
           starCant: 4.5),
@@ -78,9 +142,7 @@ class Data {
 
     _list.add(
       ReviewModel(
-          paisId: 1,
-          pathImage: 'assets/images/ani5.jpg',
-          userName: "miguel",
+          profilelist.where((w) => w.id==5).first,
           userInfo: "1 review. 2 photo",
           comments: "the is an amazing place in Dom Repu",
           starCant: 4),
@@ -88,9 +150,8 @@ class Data {
 
     _list.add(
       ReviewModel(
+        profilelist.where((w) => w.id==6).first,
           paisId: 1,
-          pathImage: 'assets/images/ani6.jpg',
-          userName: "starling",
           userInfo: "1 review. 2 photo",
           comments: "the is an amazing place in Dom Repu",
           starCant: 5),
@@ -98,9 +159,8 @@ class Data {
 
     _list.add(
       ReviewModel(
+              profilelist.where((w) => w.id==7).first,
           paisId: 1,
-          pathImage: 'assets/images/ani7.jpg',
-          userName: "anilda",
           userInfo: "1 review. 2 photo",
           comments: "the is an amazing place in Dom Repu",
           starCant: 1.5),
